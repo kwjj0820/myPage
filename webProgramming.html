@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1">
+    <style>
+        .navi {
+            overflow: hidden;
+            background-color: gray;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        }
+
+        .navi a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+
+        .navi a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .Home .text, .Home .hi {
+            margin: 100px auto;
+            width: 600px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .Home a {
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+
+        .About {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .About .image {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .About .image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .About .text {
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .About .text ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .About .text li {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .About .text a {
+            color:dodgerblue;
+            text-decoration: none;
+        }
+
+        .Tel {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin: 150px auto;
+        }
+
+        .Tel p
+        {
+            margin-left: 30px;
+            margin-top: 60px;
+        }
+
+        .Tel a {
+            display: flex;
+            margin: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .Tel img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        .About, .Tel {
+            display: none;
+        }
+
+        @media screen and (max-width: 767px) {
+            .navi a {
+                float: none;
+            }
+
+            .Home .text, .Home .hi {
+                float: none;
+                width: auto;
+                margin: 0 auto;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            .Home .hi img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .About {
+                text-align: center;
+            }
+
+            .About .text, .About .image {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .Tel p
+            {
+                margin: 0;
+            }
+            .Tel {
+                margin: 50px auto;
+            }
+
+            .Tel a {
+                display: block;
+                margin: 100px 0;
+            }
+        }
+    </style>
+    <script>
+        function naviBar(section) {
+            document.querySelector('.Home').style.display = 'none';
+            document.querySelector('.About').style.display = 'none';
+            document.querySelector('.Tel').style.display = 'none';
+            document.querySelector('.' + section).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="navi">
+        <a href="#Home" onclick="naviBar('Home');">Home</a>  
+        <a href="#About" onclick="naviBar('About');">About</a>
+        <a href="#Tel" onclick="naviBar('Tel');">Tel</a>
+    </div>
+
+    <div class="Home">
+        <div class="text">
+            <p>
+                <a>안녕하세요!</a>
+                <br>
+                저의 웹페이지에 오신 것을 환영합니다!
+            </p> 
+        </div>
+        <div class="hi">
+            <img src="hi.png" width="500px">
+        </div>
+    </div>
+
+    <div class="About">
+        <div class="image">
+            <img src="image.jpg" width="300px">
+        </div>
+        <div class="text">
+            <ul>
+                <li>이름: 강우준</li>
+                <li>소속: <a href="https://cse.kangwon.ac.kr/cse/index.do">강원대학교/IT대학/컴퓨터공학과</a> 2학년 재학</li>
+                <li>취미: 게임</li>
+                <hr>
+                <hr>
+                <li>
+                    저는 게임을 많이 좋아합니다. 그 이유로 자연스럽게 게임 개발에도 흥미가 생기게 되었고, 
+                    이는 제 목표가 게임 개발자로 되는 계기가 되었습니다.
+                    현재는 게임 개발에 자주 쓰이는 언어인 C++에 익숙해지기 위해
+                    해당 언어를 사용하여 Programming Solving을 하며 언어 자체에 
+                    익숙해지기 위해 노력하고 있습니다.
+                    또한, 게임 엔진인 Unity 3D의 사용법을 숙달하기 위해 여러 강의를 
+                    찾아보며 게임 개발자의 목표를 이루기 위해 노력하고 있습니다.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="Tel">
+        <a href="https://github.com/kwjj0820">
+            <img src="github.png">
+            <p>깃허브</p>
+        </a>
+        <a href="https://www.acmicpc.net/user/kwjj0820">
+            <img src="boj.png">
+            <p>백준 프로필</p>
+        </a>
+        <a href="https://steamcommunity.com/profiles/76561198245169366/">
+            <img src="steam.svg">
+            <p>스팀 커뮤니티</p>
+        </a>
+    </div>
+</body>
+</html>
