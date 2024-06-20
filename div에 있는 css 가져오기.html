@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				$('[size]').each(function(index, item){
+					var size = $(this).attr('size');
+					if(size == 'small') size = 50;
+					else if(size=='normal') size = 100;
+					else if(size=='large') size = 200;
+					$(this).css({'width':size, 'height':size});
+				});
+
+				$('[color]').each(function(index, item){
+					$(this).css({'background-color':$(this).attr('color')});
+				});
+			});
+		</script>		
+</head>
+<body>
+	<div color="yellow"> </div>
+	<div color="kim"> </div>
+	<div color="epl(100,100,200)"> </div>
+	<div size="small" color="red"> </div>
+	<div size="normal" color="rgb(0, 0, 255)"> </div>
+	<div size="large" color="green"> </div>
+	<div size="500"></div>
+	<div size="500a"></div>
+	<div size="tiny" color="red"> </div>
+</body>
+		
+</html>

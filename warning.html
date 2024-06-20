@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warning Message</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		#warning {
+			background-color: #f5deb3e6;
+			position: fixed;
+			display: none;
+			text-align: center;
+			box-sizing: border-box;
+		}
+
+		#warning p {
+			font-size: 32px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="warning">
+		<p>WARNING!! 3-second Usage Warning</p>
+	</div>
+	<iframe src="https://www.google.com/webhp?igu=1" id="mainFrame" style="display:block; width:100vw; height: 100vh; border: none;"></iframe>
+
+	<script>
+		$(document).ready(function() {
+			// 10초 후에 경고 메시지 표시
+			setTimeout(function() {
+				showWarningMessage();
+			}, 1000);
+
+			// 화면 크기 변경 시 경고 메시지 위치 조정
+			$(window).resize(function() {
+				repositionWarningMessage();
+			});
+		});
+
+		function showWarningMessage() {
+			$('#warning').show();
+			repositionWarningMessage();
+		}
+
+		function repositionWarningMessage() {
+			var warningWidth = $('#warning').outerWidth();
+			var warningHeight = $('#warning').outerHeight();
+			var frameWidth = $('#mainFrame').width();
+			var frameHeight = $('#mainFrame').height();
+
+			$('#warning').css({
+				'left': '50%',
+				'top': '50%',
+				'transform': 'translate(-50%, -50%)',
+				'width': frameWidth / 2 + 'px',
+				'height': frameHeight / 2 + 'px',
+				'padding-top': (frameHeight / 8) + 'px'
+			});
+		}
+	</script>
+</body>
+</html>

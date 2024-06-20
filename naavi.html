@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+        $(document).ready(function(){
+            var menuItems = $('.menu a[target-menu]');
+            menuItems.click(function(){
+                menuItems.each((index, item) => {
+                    const menuPage = '#'+$(item).attr('target-menu');
+                    if(this == item) $(menuPage).show();
+                    else $(menuPage).hide();
+                });
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div class = 'nav' >
+            <ul class = 'menu' >
+                <li><a target-menu = 'page_home' href = '#home' > HOME </a></li>
+                <li><a target-menu = 'page_about' href = '#about' > ABOUT ME </a></li>
+                <li><a target-menu = 'page_address' href = '#address' > ADDRESS </a></li>
+                <li><a target-menu = 'page_extra' href = '#address' > ADDRESS </a></li>
+            </ul>
+        </div>
+        <div class = 'nav' >
+            <div id = 'page_home' > … page_home 태그 생략 … </div>
+            <div id = 'page_about' style = 'display: none;' > … page_about 태그 생략 … </div>
+            <div id = 'page_address' style = 'display: none;' > … page_address 태그 생략 … </div>
+            <div id = 'page_extra' style = 'display: none;' > … page_address 태그 생략 … </div>
+        </div>
+        </body>
+</html>
